@@ -1,0 +1,20 @@
+def count(arr):
+    count_list = []
+    for i in range(0, 10):
+        count_list.append(0)
+    for x in arr:
+        count_list[x] += 1
+    for i in range(0, len(count_list)-1):
+        count_list[i+1] = count_list[i+1] + count_list[i]
+
+    res_arr = []
+    for i in range(0, len(arr)):
+        res_arr.append(0)
+
+    for i in range(0, len(arr)):
+        res_arr[count_list[arr[i]]-1] = arr[i]
+        count_list[arr[i]] -= 1
+
+    return res_arr
+
+print(f" sorted list: {count([1,4,0,2,7,5,2])}")
