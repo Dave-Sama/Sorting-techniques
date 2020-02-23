@@ -1,5 +1,5 @@
-# insertion sort
-def bla(a):
+# selection sort #
+def selection_sort(a):
     i = 0
     index = 0
     while i < len(a)-1:
@@ -11,7 +11,7 @@ def bla(a):
         if a[i] > a[index]:
             a[index], a[i] = a[i], a[index]
         i += 1
+    return a
 
 a = [4, 9, 1, 7, 9, 3, 1, 3, 6, -5]
-bla(a)
-print(a)
+print(selection_sort(a))
